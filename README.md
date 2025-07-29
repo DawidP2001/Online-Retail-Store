@@ -10,8 +10,17 @@
 ### Key Features
 
 ## Technologies
-
-
+* Java
+* JavaScript
+* TypeScript
+* SQL
+* Spring boot
+* REST API
+* GitHub Actions
+* MariaDB
+* Angular
+* [![Tailwind][Tailwind.js]][Tailwind-url]
+* TypeScript
 ## Development Dependencies
 
 ## Usage
