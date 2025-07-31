@@ -20,7 +20,9 @@
 * MariaDB
 * Angular
 * [![Tailwind][Tailwind.js]][Tailwind-url]
-* TypeScript
+* Azure
+* Figma for design
+
 ## Development Dependencies
 
 ## Usage
