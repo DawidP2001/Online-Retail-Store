@@ -1,16 +1,26 @@
+@import "tailwindcss";
+/*
+Main Color: ffffff
+Secondary Color: e5e5e5
+Highlight Color: 009F75
+*/
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --color-main: #ffffff;
+  --color-secondary: #e5e5e5;
+  --color-highlight: #009F75;
+  --color-text: #000000;
 }
 
 a {
@@ -65,4 +75,21 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+.navbar-colour {
+  background-color: #ffffff;
+}
+
+.color-main{
+  color: var(--color-main);
+}
+.color-secondary{
+  color: var(--color-secondary);
+}
+.color-highlight{
+  color: var(--color-highlight);
+}
+
+.hover-highlight:hover {
+  color: var(--color-highlight);
 }
