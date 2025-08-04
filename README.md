@@ -14,11 +14,10 @@
 * JavaScript
 * TypeScript
 * SQL
-* Spring boot
 * REST API
 * GitHub Actions
 * MariaDB
-* Angular
+* React
 * [![Tailwind][Tailwind.js]][Tailwind-url]
 * Azure
 * Figma for design
