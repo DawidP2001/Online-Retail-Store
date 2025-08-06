@@ -3,7 +3,7 @@
 [![Website]][Website-url]
 
 
-# Online Retail Store <i><b style="opacity: 50%;">Currently in progess</b></i>
+# Online Retail Store <i><b style="opacity: 60%;">Currently in progess</b></i>
 
 ## About
 
