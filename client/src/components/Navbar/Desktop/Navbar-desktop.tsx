@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../../Symbols/Logo';
 import { FiShoppingCart } from 'react-icons/fi';
+import SearchBar from '../Search-bar';
 
 const Navbar: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const Navbar: React.FC = () => {
       <p>Women</p>
       <p>Kids</p>
       <p>Sale</p>
+      <SearchBar placeholder='Search for products...' onSearch={() => {}} /> {/* Placeholder for search functionality */}
       <FiShoppingCart size={30} className="color-text cursor-pointer hover-highlight transition duration-300" />
     </nav>
   );

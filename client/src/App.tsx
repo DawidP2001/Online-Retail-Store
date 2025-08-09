@@ -1,3 +1,7 @@
+/**
+ * Name App.tsx
+ * Description: Here the routing logic is contained
+ */
 import Navbar from './components/Navbar/Navbar'
 
 import './App.css'
