@@ -18,18 +18,18 @@ Highlight Color: 009F75
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --color-main: #ffffff;
-  --color-secondary: #e5e5e5;
+  --color-secondary: #001610;
   --color-highlight: #009F75;
   --color-text: #000000;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-secondary);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--color-highlight);
 }
 
 body {

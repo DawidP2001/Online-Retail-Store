@@ -2,22 +2,23 @@
  * Name App.tsx
  * Description: Here the routing logic is contained
  */
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
+import Homepage from './Pages/Homepage/Homepage'
 
 import './App.css'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
   return (
-    <>
+    <Router>
       <Navbar />
-      {/* Main content of the application */}
-      <div className="content" style={{backgroundColor: 'white'}}>
-        <h1>Welcome to the Online Retail Store</h1>
-        <p>Explore our products and enjoy shopping!</p>
-        {/* Other components can be added here */}
-      </div>
-    </>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+      </Routes>
+      <Footer />
+    </Router>
   )
 }
 
