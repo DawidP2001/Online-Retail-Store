@@ -1,17 +1,13 @@
 import React  from 'react';
 
 interface ButtonProps {
-    border?: string;
     color: "black" | "white";
     children?: React.ReactNode;
-    highlight?: boolean;
-    selected?: boolean;
-    size?: "small" | "medium" | "large";
+    size: "small" | "medium" | "large";
     onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
-    border,
     color,
     children,
     size,
@@ -44,9 +40,10 @@ const Button: React.FC<ButtonProps> = ({
     return (
         <button
             style={{
-                border,
                 backgroundColor: color,
-                color: color === "black" ? "white" : "black",
+                color: color === "black" ? "white" : "gray",
+                border: color === "white" ? "solid 1px gray" : "none",
+                borderRadius: "4px",
                 fontSize: fontSize,
                 margin: "8px",
                 padding: height + " " + width,

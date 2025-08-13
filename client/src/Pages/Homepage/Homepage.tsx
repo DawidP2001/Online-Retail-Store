@@ -55,10 +55,10 @@ const Homepage: React.FC = () => {
             <Button color="black" size="large">
                 Mens
             </Button>
-            <Button color="black" size="large">
+            <Button color="white" size="large">
                 Womens
             </Button>
-            <Button color="black" size="large">
+            <Button color="white" size="large">
                 Kids
             </Button>
         </div>
