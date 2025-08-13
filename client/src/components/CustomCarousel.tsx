@@ -22,7 +22,7 @@ const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
-    items: 5
+    items: 4
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -38,21 +38,25 @@ const responsive = {
   }
 };
 
-interface CarouselItem {
-  id: string | number;
-  content: React.ReactNode;
-}
-
-interface CustomCarouselProps {
-  items: CarouselItem[];
-  className?: string;
-}
 const CustomCarousel: React.FC<CustomCarouselProps> = ({ items, className }) => {
   return (
     <div className={className}>
-      <Carousel responsive={responsive}>
+      <Carousel
+        className='user-select-none'
+        responsive={responsive}
+        draggable={true}
+        swipeable={true}
+        customTransition="transform 300ms cubic-bezier(0.4, 0, 0.2, 1)"
+        transitionDuration={300}
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        keyBoardControl={true}
+        // This enables mouse wheel scrolling
+        additionalTransfrom={0}
+        containerClass="carousel-container"
+        itemClass="carousel-item-padding-40-px"
+      >
         {items.map((item) => (
-          <div key={item.id}>
+          <div key={item.id} className="h-full w-full pointer-events-auto">
             {item.content}
           </div>
         ))}

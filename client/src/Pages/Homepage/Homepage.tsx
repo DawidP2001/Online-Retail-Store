@@ -9,38 +9,24 @@ import Card from '../../components/Card';
 import Button from '../../components/Button';
 
 const card1 = <Card
-    image="/path/to/image1.jpg"
-    title="Product 1"
-    description="Description for Product 1"
-    buttonText="View Product"
+    className="select-none"
+    image="/Products/shoe.png"
+    transformImage="/Products/shoe-2.png"
+    title="On Running Cloudstratus"
+    price="€85"
     onButtonClick={() => console.log("Product 1 clicked")}
-/>;
-const card2 = <Card
-    image="/path/to/image2.jpg"
-    title="Product 2"
-    description="Description for Product 2"
-    buttonText="View Product"
-    onButtonClick={() => console.log("Product 2 clicked")}
- />;
- const card3 = <Card
-    image="/path/to/image3.jpg"
-    title="Product 3"
-    description="Description for Product 3"
-    buttonText="View Product"
-    onButtonClick={() => console.log("Product 3 clicked")}
- />;
- const card4 = <Card
-    image="/path/to/image4.jpg"
-    title="Product 4"
-    description="Description for Product 4"
-    buttonText="View Product"
-    onButtonClick={() => console.log("Product 4 clicked")}
- />;
+  />;
 const carouselItems = [
   { id: 1, content: card1 },
-  { id: 2, content: card2 },
-  { id: 3, content: card3 },
-  { id: 4, content: card4 },
+  { id: 2, content: card1 },
+  { id: 3, content: card1 },
+  { id: 4, content: card1 },
+  { id: 5, content: card1 },
+  { id: 6, content: card1 },
+  { id: 7, content: card1 },
+  { id: 8, content: card1 },
+  { id: 9, content: card1 },
+  { id: 10, content: card1 },
 ];
 
 const Homepage: React.FC = () => {
@@ -61,7 +47,7 @@ const Homepage: React.FC = () => {
             <h1 className="text-2xl font-bold mb-4">New in</h1>
             <CustomCarousel 
                 items={carouselItems}
-                className='m-20'
+                className=''
             />
         </div>
         <div className='flex items-center'>
@@ -80,15 +66,13 @@ const Homepage: React.FC = () => {
             <Card
                 image="/path/to/image1.jpg"
                 title="Featured Product 1"
-                description="Description for Featured Product 1"
-                buttonText="Buy Now"
+                price="price for Featured Product 1"
                 onButtonClick={() => console.log("Featured Product 1 clicked")}
             />
             <Card
                 image="/path/to/image2.jpg"
                 title="Featured Product 2"
-                description="Description for Featured Product 2"
-                buttonText="Buy Now"
+                price="price for Featured Product 2"
                 onButtonClick={() => console.log("Featured Product 2 clicked")}
             />
         </div>

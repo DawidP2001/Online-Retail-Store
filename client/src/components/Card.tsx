@@ -1,30 +1,52 @@
-import React from "react";
+/**
+ * Name: Card
+ * Description: This component represents a product card in the application.
+*/
+
+import React, { useState } from "react";
 
 interface CardProps {
+	className?: string;
 	image: string;
+	transformImage?: string;
 	title: string;
-	description: string;
-	buttonText?: string;
+	price: string;
 	onButtonClick?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ image, title, description, buttonText, onButtonClick }) => {
+const Card: React.FC<CardProps> = ({ className, image, transformImage, title, price, onButtonClick }) => {
+	const [isHovered, setIsHovered] = useState(false);
+
+  	const handleMouseEnter = () => setIsHovered(true);
+  	const handleMouseLeave = () => setIsHovered(false);
+
 	return (
-		<div className="max-w-sm rounded-xl overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 border border-gray-200">
-			<img className="w-full h-48 object-cover" src={image} alt={title} />
-			<div className="p-6">
-				<h2 className="font-bold text-xl mb-2 text-gray-900">{title}</h2>
-				<p className="text-gray-700 text-base mb-4">{description}</p>
-				{buttonText && (
-					<button
-						className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200"
-						onClick={onButtonClick}
-					>
-						{buttonText}
-					</button>
-				)}
+		<button
+			className={`rounded-xl overflow-hidden bg-white ${className}`}
+			onClick={onButtonClick}
+		>
+			{isHovered && transformImage ? 
+			<img 
+				className="w-full h-full object-cover" 
+				src={transformImage} 
+				alt={title} 
+				onMouseEnter={handleMouseEnter}
+      			onMouseLeave={handleMouseLeave}
+				draggable={false}
+			/> : <img 
+				className="w-full h-full object-cover" 
+				src={image} 
+				alt={title}
+				onMouseEnter={handleMouseEnter}
+      			onMouseLeave={handleMouseLeave}
+				draggable={false}
+			/>}
+			
+			<div className="">
+				<p className="font-bold my-2 text-xl text-left">{price}</p>
+				<h2 className="text-xl mb-2 text-left">{title}</h2>
 			</div>
-		</div>
+		</button>
 	);
 };
 
