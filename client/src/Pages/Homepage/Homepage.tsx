@@ -28,8 +28,43 @@ const carouselItems = [
   { id: 9, content: card1 },
   { id: 10, content: card1 },
 ];
+const maleCard = <Card
+                className="m-1"
+                image="/Products/men1.webp"
+                transformImage="/Products/men2.webp"
+                title="On Running Cloudstratus"
+                price="€85"
+                onButtonClick={() => console.log("Product 1 clicked")}
+            />;
+const femaleCard = <Card
+                className="m-1"
+                image="/Products/women1.webp"
+                transformImage="/Products/Women2.webp"
+                title="On Running Cloudstratus"
+                price="€85"
+                onButtonClick={() => console.log("Product 1 clicked")}
+            />;
+const kidsCard = <Card
+                className="m-1"
+                image="/Products/shoe.png"
+                transformImage="/Products/shoe-2.png"
+                title="On Running Cloudstratus"
+                price="€85"
+                onButtonClick={() => console.log("Product 1 clicked")}
+            />;
+
 
 const Homepage: React.FC = () => {
+    const [buttonClicked, setButtonClicked] = React.useState<string | null>('mens');
+    let productCard = maleCard;
+    if(buttonClicked === 'mens') {
+        productCard = maleCard;
+    } else if(buttonClicked === 'womens') {
+        productCard = femaleCard;
+    } else if(buttonClicked === 'kids') {
+        productCard = kidsCard;
+    }
+
   return (
     <div className="homepage w-screen">
         <div
@@ -52,29 +87,21 @@ const Homepage: React.FC = () => {
         </div>
         <div className='flex items-center'>
             <p className='mr-4 text-2xl font-semibold m-10'>Featured Products</p>
-            <Button color="black" size="large">
+            <Button color={buttonClicked === 'mens' ? "black" : "white"} size="large" onClick={() => setButtonClicked('mens')}>
                 Mens
             </Button>
-            <Button color="white" size="large">
+            <Button color={buttonClicked === 'womens' ? "black" : "white"} size="large" onClick={() => setButtonClicked('womens')}>
                 Womens
             </Button>
-            <Button color="white" size="large">
+            <Button color={buttonClicked === 'kids' ? "black" : "white"} size="large" onClick={() => setButtonClicked('kids')}>
                 Kids
             </Button>
         </div>
-        <div className='flex justify-start space-x-4'>
-            <Card
-                image="/path/to/image1.jpg"
-                title="Featured Product 1"
-                price="price for Featured Product 1"
-                onButtonClick={() => console.log("Featured Product 1 clicked")}
-            />
-            <Card
-                image="/path/to/image2.jpg"
-                title="Featured Product 2"
-                price="price for Featured Product 2"
-                onButtonClick={() => console.log("Featured Product 2 clicked")}
-            />
+        <div className='grid-cols-4 space-x-4'>
+            {productCard}
+            {productCard}
+            {productCard}
+            {productCard}   
         </div>
     </div>
   );

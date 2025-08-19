@@ -1,6 +1,7 @@
 import React  from 'react';
 
 interface ButtonProps {
+    className?: string;
     color: "black" | "white";
     children?: React.ReactNode;
     size: "small" | "medium" | "large";
@@ -8,6 +9,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({
+    className,
     color,
     children,
     size,
@@ -39,6 +41,7 @@ const Button: React.FC<ButtonProps> = ({
 
     return (
         <button
+            className={`button ${className} flex items-center justify-center`}
             style={{
                 backgroundColor: color,
                 color: color === "black" ? "white" : "gray",
