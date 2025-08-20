@@ -7,7 +7,7 @@ type LogoProps = {
 
 const Logo: React.FC<LogoProps> = ({ size = 40, className }) => {
   return (
-    <div className={`logo ${className}`} style={{ fontSize: size, fontFamily: "Brush Script MT, sans-serif" }}>
+    <div className={`logo px-3 ${className}`} style={{ fontSize: size, fontFamily: "Brush Script MT, sans-serif" }}>
       I&A
     </div>
   );

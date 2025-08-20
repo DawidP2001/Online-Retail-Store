@@ -1,9 +1,9 @@
-// import Logo from "../Symbols/Logo";
+import Logo from "../Symbols/Logo";
 // import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="footer w-full h-full bg-gray-200 grid grid-cols-4 gap-4">
+    <footer className="footer w-full h-full bg-gray-200 grid grid-cols-5 gap-4">
         <div className="flex flex-col justify-start items-start p-5 space-y-4">
             <h2>Italia Attire</h2>
             <a href="#">About Us</a>
@@ -39,8 +39,13 @@ function Footer() {
             <a href="#">Twitter</a>
             <a href="#">Facebook</a>
         </div>
+        <div className="flex justify-start items-start flex-row p-5 space-x-4">
+            <div>Ireland</div>
+            <div>Log in</div>
+            <Logo size={30} className="cursor-pointer" />
+        </div>
     </footer>
   );
 }   
 
-export default Footer;
+export default Footer; 
