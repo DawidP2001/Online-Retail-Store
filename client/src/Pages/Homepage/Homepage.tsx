@@ -5,10 +5,12 @@
 
 import React from 'react';
 import CustomCarousel from '../../components/CustomCarousel';
-import Card from '../../components/Card';
+import ProductCard from '../../components/ProductCard';
 import Button from '../../components/Button';
+import BrandCard from '../../components/BrandCard';
 
-const card1 = <Card
+
+const card1 = <ProductCard
     className="select-none"
     image="/Products/shoe.png"
     transformImage="/Products/shoe-2.png"
@@ -28,7 +30,7 @@ const carouselItems = [
   { id: 9, content: card1 },
   { id: 10, content: card1 },
 ];
-const maleCard = <Card
+const maleCard = <ProductCard
                 className="m-1"
                 image="/Products/men1.webp"
                 transformImage="/Products/men2.webp"
@@ -36,7 +38,7 @@ const maleCard = <Card
                 price="€85"
                 onButtonClick={() => console.log("Product 1 clicked")}
             />;
-const femaleCard = <Card
+const femaleCard = <ProductCard
                 className="m-1"
                 image="/Products/women1.webp"
                 transformImage="/Products/Women2.webp"
@@ -44,7 +46,7 @@ const femaleCard = <Card
                 price="€85"
                 onButtonClick={() => console.log("Product 1 clicked")}
             />;
-const kidsCard = <Card
+const kidsCard = <ProductCard
                 className="m-1"
                 image="/Products/shoe.png"
                 transformImage="/Products/shoe-2.png"
@@ -64,11 +66,15 @@ const Homepage: React.FC = () => {
     } else if(buttonClicked === 'kids') {
         productCard = kidsCard;
     }
-
+const brandCard = <BrandCard 
+    className="w-full h-full" 
+    image='/Brands/New-Balance.webp'
+    brandName='New Balance'
+/>; 
   return (
     <div className="homepage w-screen">
         <div
-            className="hero-page w-full h-screen mt-20 flex items-center justify-center"
+            className="hero-page w-full h-screen mt-20 flex items-center justify-center bg-fixed"
             style={{ backgroundImage: "url('/hero3.jpg')", backgroundSize: "cover" }}
         >
             <h1 
@@ -78,15 +84,15 @@ const Homepage: React.FC = () => {
                 Refined <span className="color-highlight">Luxury</span>, Dress the <span className="color-highlight">Legacy</span>
             </h1>
         </div>
-        <div className="content">
-            <h1 className="text-2xl font-bold mb-4">New in</h1>
+        <div className="mt-10">
+            <div className="mr-4 text-4xl font-semibold m-10 p-1 text-left">New in</div>
             <CustomCarousel 
                 items={carouselItems}
                 className=''
             />
         </div>
-        <div className='flex items-center'>
-            <p className='mr-4 text-2xl font-semibold m-10'>Featured Products</p>
+        <div className='flex items-center justify-start mt-10'>
+            <div className='mr-4 text-4xl font-semibold m-10 p-1 '>Featured Products</div>
             <Button color={buttonClicked === 'mens' ? "black" : "white"} size="large" onClick={() => setButtonClicked('mens')}>
                 Mens
             </Button>
@@ -102,6 +108,10 @@ const Homepage: React.FC = () => {
             {productCard}
             {productCard}
             {productCard}   
+        </div>
+        <div className='grid grid-cols-2 space-x-4 mt-10 p-5'>
+            {brandCard}
+            {brandCard}
         </div>
     </div>
   );

@@ -1,5 +1,5 @@
 /**
- * Name: Card
+ * Name: ProudctCard
  * Description: This component represents a product card in the application.
 */
 
