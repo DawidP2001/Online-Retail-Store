@@ -74,42 +74,44 @@ const brandCard = <BrandCard
   return (
     <div className="homepage w-screen">
         <div
-            className="hero-page w-full h-screen mt-20 flex items-center justify-center bg-fixed"
+            className="hero-page w-full h-screen mt-20 flex items-center justify-center bg-fixed px-4"
             style={{ backgroundImage: "url('/hero3.jpg')", backgroundSize: "cover" }}
         >
             <h1 
-                className='text-white text-4xl font-bold h-20 relative bottom-10'
+                className='text-white p-5 text-xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center leading-tight'
                 style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}
             >
                 Refined <span className="color-highlight">Luxury</span>, Dress the <span className="color-highlight">Legacy</span>
             </h1>
         </div>
         <div className="mt-10">
-            <div className="mr-4 text-4xl font-semibold m-10 p-1 text-left">New in</div>
+            <div className="text-2xl md:text-3xl lg:text-4xl font-semibold mx-4 md:mx-10 mb-4 text-left">New in</div>
             <CustomCarousel 
                 items={carouselItems}
                 className=''
             />
         </div>
-        <div className='flex items-center justify-start mt-10'>
-            <div className='mr-4 text-4xl font-semibold m-10 p-1 '>Featured Products</div>
-            <Button color={buttonClicked === 'mens' ? "black" : "white"} size="large" onClick={() => setButtonClicked('mens')}>
-                Mens
-            </Button>
-            <Button color={buttonClicked === 'womens' ? "black" : "white"} size="large" onClick={() => setButtonClicked('womens')}>
-                Womens
-            </Button>
-            <Button color={buttonClicked === 'kids' ? "black" : "white"} size="large" onClick={() => setButtonClicked('kids')}>
-                Kids
-            </Button>
+        <div className='flex flex-col md:flex-row items-start md:items-center justify-start mt-10 space-y-4 md:space-y-0'>
+            <div className='p-5 text-2xl md:text-3xl lg:text-4xl font-semibold mx-4 md:mx-10 mb-4 md:mb-0'>Featured Products</div>
+            <div className='flex flex-wrap gap-2 mx-4 md:mx-0'>
+                <Button color={buttonClicked === 'mens' ? "black" : "white"} size="large" onClick={() => setButtonClicked('mens')}>
+                    Mens
+                </Button>
+                <Button color={buttonClicked === 'womens' ? "black" : "white"} size="large" onClick={() => setButtonClicked('womens')}>
+                    Womens
+                </Button>
+                <Button color={buttonClicked === 'kids' ? "black" : "white"} size="large" onClick={() => setButtonClicked('kids')}>
+                    Kids
+                </Button>
+            </div>
         </div>
-        <div className='grid-cols-4 space-x-4'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mx-4 md:mx-10 mt-6'>
             {productCard}
             {productCard}
             {productCard}
             {productCard}   
         </div>
-        <div className='grid grid-cols-2 space-x-4 mt-10 p-5'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 mx-4 md:mx-10'>
             {brandCard}
             {brandCard}
         </div>
