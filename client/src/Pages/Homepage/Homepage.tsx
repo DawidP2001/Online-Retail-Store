@@ -85,7 +85,7 @@ const brandCard = <BrandCard
             </h1>
         </div>
         <div className="mt-10">
-            <div className="text-2xl md:text-3xl lg:text-4xl font-semibold mx-4 md:mx-10 mb-4 text-left">New in</div>
+            <div className="text-2xl md:text-3xl lg:text-4xl font-semibold pl-8 md:mx-10 mb-4 text-left h-12">New in</div>
             <CustomCarousel 
                 items={carouselItems}
                 className=''
