@@ -4,10 +4,10 @@
  */
 
 import React from 'react';
-import CustomCarousel from '../../components/CustomCarousel';
-import ProductCard from '../../components/ProductCard';
-import Button from '../../components/Button';
-import BrandCard from '../../components/BrandCard';
+import CustomCarousel from '../components/CustomCarousel';
+import ProductCard from '../components/ProductCard';
+import Button from '../components/Button';
+import BrandCard from '../components/BrandCard';
 
 
 const card1 = <ProductCard
