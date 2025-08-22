@@ -10,16 +10,14 @@
 ### Key Features
 
 ## Technologies
-* Java
 * JavaScript
+* Python
 * TypeScript
-* SQL
 * REST API
 * GitHub Actions
-* MariaDB
+* MongoDB
 * React
-* [![Tailwind][Tailwind.js]][Tailwind-url]
-* Azure
+* Tailwind
 * Figma for design
 
 ## Development Dependencies
