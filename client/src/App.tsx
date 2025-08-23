@@ -5,21 +5,31 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Homepage from './Pages/Homepage'
-import Productpage from './Pages/ProductPage'
-
+import Productpage from './Pages/Productpage'
 import './App.css'
 import Footer from './components/Footer/Footer'
+import React from 'react'
+import MegaMenu from './components/Navbar/Desktop/MegaMenu'
 
 function App() {
+const [isMegaMenuOpen, setIsMegaMenuOpen] = React.useState(false);
+const [megaMenuSection, setMegaMenuSection] = React.useState<'mens' | 'womens' | 'kids' | 'sale'>('mens');
+
+const handleCloseMegaMenu = () => {
+    if (isMegaMenuOpen) setIsMegaMenuOpen(false);
+  };
 
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/Productpage" element={<Productpage />} />
-      </Routes>
-      <Footer />
+      <div onClick={handleCloseMegaMenu}>
+        <Navbar setIsMegaMenuOpen={setIsMegaMenuOpen} setMegaMenuSection={setMegaMenuSection}/>
+        {isMegaMenuOpen ? <MegaMenu section={megaMenuSection}/> : null}
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/Productpage" element={<Productpage />} />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   )
 }

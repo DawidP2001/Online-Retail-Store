@@ -74,7 +74,7 @@ const brandCard = <BrandCard
   return (
     <div className="homepage w-screen">
         <div
-            className="hero-page w-full h-screen mt-20 flex items-center justify-center bg-fixed px-4"
+            className="hero-page w-full h-screen mt-10 flex items-center justify-center bg-fixed px-4"
             style={{ backgroundImage: "url('/hero3.jpg')", backgroundSize: "cover" }}
         >
             <h1 
