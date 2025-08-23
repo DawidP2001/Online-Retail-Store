@@ -19,6 +19,7 @@
 * React
 * Tailwind
 * Figma for design
+* Flask
 
 ## Development Dependencies
 
