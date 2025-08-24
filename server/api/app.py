@@ -64,7 +64,14 @@ class ProductAPI(MethodView):
         return ProductOut().dump(product), 201
 
     @app.route('/api/v1/products/<int:product_id>', methods=['GET'])
-    def get_product(product_id):
+    def get_product_by_id(product_id):
+            product = products_collection.find_one({'id': product_id})
+            if not product:
+                abort(404)
+            return ProductOut().dump(product)
+    
+    @app.route('/api/v1/products/', methods=['GET'])
+    def get_product():
             product = products_collection.find_one({'id': product_id})
             if not product:
                 abort(404)
