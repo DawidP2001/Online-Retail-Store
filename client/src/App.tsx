@@ -26,7 +26,7 @@ const handleCloseMegaMenu = () => {
         {isMegaMenuOpen ? <MegaMenu section={megaMenuSection}/> : null}
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/Productpage" element={<Productpage />} />
+          <Route path="/Productpage" element={<Productpage query='test'/>} />
         </Routes>
         <Footer />
       </div>

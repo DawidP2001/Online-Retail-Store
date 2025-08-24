@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="footer w-full border-t border-gray-300 h-full grid grid-cols-5 gap-4 text-left">
+    <footer className="footer w-screen border-t border-gray-300 h-full grid grid-cols-5 gap-4 text-left">
         <div className="flex flex-col justify-start items-start p-5 space-y-4">
             <h2>Italia Attire</h2>
             <a href="#">About Us</a>

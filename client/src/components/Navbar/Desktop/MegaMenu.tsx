@@ -50,9 +50,12 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ section, className }) => {
                         <h3 className="text-lg font-semibold mb-2">{columnData.Title}</h3>
                         <ul>
                             {columnData.items.map((item, index) => (
-                                <li key={index} className="mb-1 hover:underline cursor-pointer">{item}</li>
+                                <a href="/Productpage" key={index}>
+                                    <li key={index} className="mb-1 hover:underline cursor-pointer">{item}</li>
+                                </a>
                             ))}
                         </ul>
+                                
                     </div>
                 ))}
             </div>

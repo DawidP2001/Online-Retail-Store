@@ -5,9 +5,9 @@
 
 import React from 'react';
 import CustomCarousel from '../components/CustomCarousel';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/Cards/ProductCard';
 import Button from '../components/Button';
-import BrandCard from '../components/BrandCard';
+import BrandCard from '../components/Cards/BrandCard';
 
 
 const card1 = <ProductCard
